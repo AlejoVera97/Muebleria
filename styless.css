@@ -1,0 +1,105 @@
+#titulo-contenedor {
+    text-align: center;
+    padding: 20px;
+    background-color: #080808;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#titulo {
+    color: white;
+    font-size: 50px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+#logo-empresa {
+    max-width: 100px; 
+    height: auto;
+}
+
+#encabezado {
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+.grid {
+    display: grid;
+    background-color: rgba(3, 3, 3, 0.138);
+    grid-template-columns: auto auto auto ;
+    grid-template-rows: auto;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+#carrito{
+background-color: rgba(5, 5, 5, 0.274);
+display: flex;
+flex-direction: column;
+justify-content: center; /* Centrar el contenido dentro del carrito */
+align-items: center;
+padding: 10px; /* Añadir padding para un mejor diseño */
+border-radius: 5px; /* Bordes redondeados para mejor estética */
+}
+
+
+
+.mesa-luz,
+.bliobioteca,
+.sillon  {
+    position: absolute;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 5px; 
+    overflow: hidden; 
+    height: 300px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+
+.imagen {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+
+}
+
+
+.nombre-articulo {
+    position: relative;
+    bottom: 10px; 
+    left: 15px; 
+    font-size: 20px; 
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 5px; 
+    border-radius: 5px; 
+    align-items: center;
+}
+    .precio-articulo {
+        position: relative;
+        text-align: center;
+        top: 10px;
+        left: 10px;
+        font-size: 18px;
+        color: rgb(250, 250, 250);
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+
+ 
+/** RESALTADOR GRID  **/
+.imagen:hover {
+    border: 3px solid #000;
+}
