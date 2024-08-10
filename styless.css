@@ -15,11 +15,14 @@
     font-size: 50px;
     font-family: Arial, sans-serif;
     margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+
 }
 
 #logo-empresa {
-    max-width: 100px; 
-    height: auto;
+    max-width: 100%; 
+    height: 100px;
+    border-radius: 50%;
 }
 
 #encabezado {
@@ -27,79 +30,107 @@
     background-color: black;
     text-align: center;
     padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.grid {
-    display: grid;
-    background-color: rgba(3, 3, 3, 0.138);
-    grid-template-columns: auto auto auto ;
-    grid-template-rows: auto;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-}
-
-#carrito{
-background-color: rgba(5, 5, 5, 0.274);
-display: flex;
-flex-direction: column;
-justify-content: center; 
-align-items: center;
-padding: 10px; 
-border-radius: 5px; 
-}
-
-
-
-.mesa-luz,
-.bliobioteca,
-.sillon  {
-    position: absolute;
-    border: 1px solid black;
-    text-align: center;
+#carrito {
+    color:  white;
+    font-size: 18px; 
+    padding: 5px 10px; 
+    background-color: #444;
     border-radius: 5px; 
-    overflow: hidden; 
-    height: 300px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    cursor: pointer; /
+}
+
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        gap: 10px;
+        padding: 10px;
+        justify-content: center;
     }
-
-
-.imagen {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-
-}
-
-
-.nombre-articulo {
-    position: relative;
-    bottom: 10px; 
-    left: 15px; 
-    font-size: 20px; 
-    color: black;
-    background-color: rgba(255, 255, 255, 0.8); 
-    padding: 5px; 
-    border-radius: 5px; 
-    align-items: center;
-}
-    .precio-articulo {
+    
+    .grid-item {
         position: relative;
+        background-color: #060606f2;
+        border: 1px solid #080808;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .imagen-contenedor {
+        position: relative;
+    }
+    
+    .imagen {
+        width: 100%;
+        height: 400px; /* Ajusta según tus necesidades */
+        object-fit: cover;
+    }
+    
+    .agregar-carrito {
+        position: absolute;
+        top: 90%; 
+        left: 20%; 
+        transform: translate(-50%, -50%); 
+        background-color: #4CAF50; 
+        color: rgb(246, 245, 245); 
+        border: none; 
+        padding: 10px 20px; 
+        font-size: 16px;
+        border-radius: 5px; 
+        cursor: pointer; 
+        z-index: 1; /
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    .agregar-carrito:hover {
+        background-color: #45a049; /* Color de fondo cuando se pasa el cursor */
+    }
+    
+    .nombre-articulo, .precio-articulo {
         text-align: center;
-        top: 10px;
-        left: 10px;
-        font-size: 18px;
-        color: rgb(250, 250, 250);
-        background-color: rgba(0, 0, 0, 0.7);
+        margin: 5px 0;
         padding: 5px;
+        background-color: rgba(19, 18, 18, 0.665);
+        color: rgba(254, 252, 252, 0.976);
         border-radius: 5px;
     }
 
+    
+    
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Se queda en el mismo lugar */
+    z-index: 1; /* Se muestra sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilita el scroll si es necesario */
+    background-color: rgb(0,0,0); /* Color de fondo */
+    background-color: rgba(0,0,0,0.4); /* Fondo con opacidad */
+}
 
- 
-/** RESALTADOR GRID  **/
-.imagen:hover {
-    border: 3px solid #000;
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% desde arriba y centrado */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho de la ventana */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
