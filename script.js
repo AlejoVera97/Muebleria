@@ -1,6 +1,9 @@
+
+
 let productos = document.getElementById("productos");
 
-// base en json
+// BASE EN JSON 
+
 fetch("/data.json")
 .then((response) => response.json())
 .then((data) => {
@@ -21,8 +24,12 @@ fetch("/data.json")
     });
 });
 
+
+//---------------------------------------------------------------------------------------------
+
 // Array para almacenar productos en el carrito
 let carrito = [];
+
 
 //Cargar el carrito desde el localStorage al inicializar la página
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,6 +39,8 @@ if (carritoGuardado) {
 }
 actualizarCarrito();
 });
+
+//---------------------------------------------------------------------------------------------
 
 // Función para agregar productos al carrito
 function agregarAlCarrito(id) {
@@ -46,18 +55,18 @@ fetch("/data.json")
             productoEnCarrito.cantidad++;
         } else {
             Swal.fire("No hay mas stock,lo siento!");
-
         }
         } else {
         carrito.push({ ...producto, cantidad: 1 });
         }
-
     actualizarCarrito();
     localStorage.setItem("carrito", JSON.stringify(carrito));
     }
     })
 .catch((error) => console.error("Error al buscar el producto:", error));
 }
+
+//---------------------------------------------------------------------------------------------
 
 //funcion actulizar carrito
 function actualizarCarrito() {
@@ -76,12 +85,10 @@ carrito.forEach((producto) => {
                     <button onclick="eliminarDelCarrito(${producto.id})">Eliminar</button>
                 `;
     contenedorCarrito.appendChild(div);
-
-// Calcular el total sumando precio por cantidad
 total += producto.precio * producto.cantidad;
 });
 
-
+//---------------------------------------------------------------------------------------------
 
 // Mostrar el total debajo de los productos en el carrito
 const totalDiv = document.createElement("div");
@@ -90,46 +97,12 @@ totalDiv.innerHTML = `<section id="carrito" onclick="mostrarCarrito()">
                      <i class="fas fa-shopping-cart"></i> Carrito
                     </section>`;
 contenedorCarrito.appendChild(totalDiv);
+totalDiv.addEventListener("click", () => {
+    window.open("carrito.html", "_blank"); 
+});
 }
 
-// funcion para agregar mas productos
-function incrementarCantidad(id) {
-fetch("/data.json")
-.then((response) => response.json())
-.then((productos) => {
-const producto = carrito.find((prod) => prod.id === id);
-const productoOriginal = productos.find((p) => p.id === id);
-if (producto && productoOriginal && producto.cantidad < productoOriginal.cantidad) {
-    producto.cantidad++;
-    actualizarCarrito();
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    } else {
-        Swal.fire("No hay mas stock, lo siento! ");
-
-        }
-    })
-    .catch((error) => console.error("Error al buscar el producto:", error));
-}
-
-//funcion para disminutir  productos
-function disminuirCantidad(id) {
-const producto = carrito.find((prod) => prod.id === id);
-if (producto && producto.cantidad > 1) {
-    producto.cantidad--;
-    } else if (producto && producto.cantidad === 1) {
-    eliminarDelCarrito(id);
-    }
-    actualizarCarrito();
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-}
-
-//funcion para eliminar articulo del carrito.
-function eliminarDelCarrito(id) {
-    carrito = carrito.filter((prod) => prod.id !== id);
-    actualizarCarrito();
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-}
-
+//---------------------------------------------------------------------------------------------
 
 //Mostrar productos 
 document.addEventListener("DOMContentLoaded", () => {
