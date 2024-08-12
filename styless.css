@@ -65,11 +65,11 @@
     
     .imagen {
         width: 100%;
-        height: 400px; /* Ajusta según tus necesidades */
+        height: 400px; 
         object-fit: cover;
     }
     
-    .agregar-carrito {
+    .productoAgregar {
         position: absolute;
         top: 90%; 
         left: 20%; 
@@ -85,8 +85,8 @@
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     }
     
-    .agregar-carrito:hover {
-        background-color: #45a049; /* Color de fondo cuando se pasa el cursor */
+    .productoAgregar:hover {
+        background-color: #45a049; 
     }
     
     .nombre-articulo, .precio-articulo {
@@ -98,39 +98,22 @@
         border-radius: 5px;
     }
 
+    .boton-compras {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #4CAF50; 
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none; 
+        transition: background-color 0.3s ease; 
+    }
+    
+    .boton-compras:hover {
+        background-color:  #45a049; 
+    }
     
     
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Se queda en el mismo lugar */
-    z-index: 1; /* Se muestra sobre otros elementos */
-    left: 0;
-    top: 0;
-    width: 100%; /* Ancho completo */
-    height: 100%; /* Alto completo */
-    overflow: auto; /* Habilita el scroll si es necesario */
-    background-color: rgb(0,0,0); /* Color de fondo */
-    background-color: rgba(0,0,0,0.4); /* Fondo con opacidad */
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% desde arriba y centrado */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Ancho de la ventana */
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}

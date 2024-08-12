@@ -10,8 +10,6 @@
     
   <!-- JS -->
     <script defer src="carrito.js"></script>
-   <!-- JS -->
-   <script defer src="script.js"></script>
 
 
 </head>
@@ -21,15 +19,25 @@
             <h1>Tu Carrito de Compras</h1>
             <div id="contenedor-carrito"></div> <!-- Aquí se llenarán los productos del carrito -->
             
-            <!-- Nuevo contenedor para el total y el botón del carrito -->
-            <div id="contenedor-total">
-                <div id="total"></div> <!-- Aquí se mostrará el total -->
-                <div id="total-carrito" class="total-carrito">
-                    <section id="carrito" onclick="mostrarCarrito()">
-                        <i class="fas fa-shopping-cart"></i> Carrito
-                    </section>
-                </div>
+            <section id="tarjetaCompras"> </section>
+            
             </div>
-        </body>
+        <form id="form">
+        <input type="number" id="precio">
+
+        <div id="cuotas-calculo">
+            <select id="cuotas">
+              <option value="2">2 cuotas</option>
+              <option value="3">3 cuotas</option>
+              <option value="6">6 cuotas</option>
+              <option value="12">12 cuotas</option>
+            </select>
+            <button type="button" id="calcular">Calcular</button>
+          </div>
+            <h2 id="botonVolver"><a href="./index.html"> Volver al catalogo </a></h2>
+
+        
+
+        </body> 
 </body>
 </html>
