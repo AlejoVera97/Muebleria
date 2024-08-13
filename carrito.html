@@ -1,43 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de compras</title>
 
-  <!-- CSS-->
-  <link rel="stylesheet" href="carrito.css">
-    
-  <!-- JS -->
+    <!-- CSS-->
+    <link rel="stylesheet" href="carrito.css">
+
+    <!-- JS -->
     <script defer src="carrito.js"></script>
 
 
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
+
 <body>
-    <body>
-        <body>
-            <h1>Tu Carrito de Compras</h1>
-            <div id="contenedor-carrito"></div> <!-- Aquí se llenarán los productos del carrito -->
-            
-            <section id="tarjetaCompras"> </section>
-            
-            </div>
+    <div id="main-container">
+        <h1>Tu Carrito de Compras</h1>
+        <div id="contenedor-carrito"></div> <!-- Aquí se llenarán los productos del carrito -->
+
+        <section id="tarjetaCompras"></section>
+
         <form id="form">
-        <input type="number" id="precio">
+            <div id="cuotas-calculo">
+                <select id="cuotas">
+                    <option value="" disabled selected>Seleccionar cuotas</option>
+                    <option value="1">1 cuota</option>
+                    <option value="3">3 cuotas</option>
+                    <option value="6">6 cuotas</option>
+                    <option value="12">12 cuotas</option>
+                  </select>
+                <button type="button" id="calcular">Calcular</button>
+            </div>
 
-        <div id="cuotas-calculo">
-            <select id="cuotas">
-              <option value="2">2 cuotas</option>
-              <option value="3">3 cuotas</option>
-              <option value="6">6 cuotas</option>
-              <option value="12">12 cuotas</option>
-            </select>
-            <button type="button" id="calcular">Calcular</button>
-          </div>
-            <h2 id="botonVolver"><a href="./index.html"> Volver al catalogo </a></h2>
+            <!-- Cuadro de texto para mostrar el cálculo -->
+            <input type="text" id="resultado" readonly placeholder="Monto en cuotas aparecerá aquí">
+        </form>
 
-        
+        <!-- Botón de Comprar -->
+        <button id="comprar" type="button">Comprar</button>
 
-        </body> 
+        <!-- Formulario para datos del usuario (inicialmente oculto) -->
+        <div id="formularioUsuario" style="display: none;">
+            <h2>Datos del Usuario</h2>
+            <form id="datosUsuarioForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <div id="montoTotal"> Total </div>
+
+                <div id="detalleCuotas"></div>
+
+                <button type="button" id="confirmarCompra">Confirmar Compra</button>
+            </form>
+        </div>
+
+        <div id="totalCarrito"></div>
+
+        <h2 id="botonVolver"> <a href="./index.html"> <i class="fas fa-arrow-left"></i> Volver al catálogo </a> </h2>
+    </div>
 </body>
+
 </html>
