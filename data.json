@@ -4,42 +4,42 @@
     "nombre": "Mesa de luz",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_712772-MLU73469054400_122023-F.webp",
     "precio": 5000,
-    "cantidad": 15
+    "stock": 15
 },
 {
     "id": 2,
     "nombre": "Biblioteca",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_658878-MLU75662902036_042024-F.webp",
     "precio": 7000,
-    "cantidad": 10
+    "stock": 10
 },
 {
     "id": 3,
     "nombre": "Sillon ",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_888343-MLU46009471703_052021-F.webp",
     "precio": 4000,
-    "cantidad": 8
+    "stock": 8
 },
 {
     "id": 4,
     "nombre": "Rack de television",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_905334-MLU75526958971_042024-F.webp",
     "precio": 4800,
-    "cantidad": 13 
+    "stock": 13 
 },
 {
     "id": 5,
     "nombre": "Juego de comedor",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_671670-MLU73998236122_012024-F.webp",
     "precio": 8000,
-    "cantidad": 8 
+    "stock": 8 
 },
 {
     "id": 6,
     "nombre": "Silla gamer ",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_616691-MLU77357167235_062024-F.webp",
     "precio": 3300,
-    "cantidad": 20
+    "stock": 20
 },
 
 {
@@ -47,7 +47,7 @@
     "nombre": "Ropero multiuso",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_991377-MLU73357309022_122023-F.webp",
     "precio": 2800,
-    "cantidad": 17
+    "stock": 17
 },
 
 {
@@ -55,14 +55,14 @@
     "nombre": "Ropero dormitorio ",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_809032-MLU77302151712_072024-F.webp",
     "precio": 5800,
-    "cantidad": 7
+    "stock": 7
 },
 {
     "id": 9,
     "nombre": "Zapatera ",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_911433-MLU77382643286_072024-F.webp",
     "precio": 1800,
-    "cantidad": 16
+    "stock": 16
 },
 
 {
@@ -70,7 +70,7 @@
     "nombre": "Cocina completa ",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_809739-MLU72528428936_102023-F.webp",
     "precio": 10800,
-    "cantidad": 6
+    "stock": 6
 },
 
 {
@@ -78,7 +78,7 @@
     "nombre": "Juego de Jardin ",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_919203-MLU71303867739_082023-F.webp",
     "precio": 10800,
-    "cantidad": 6
+    "stock": 6
 },
 
 {
@@ -86,7 +86,7 @@
     "nombre": "Escritorio ",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_718429-MLU72700628655_112023-F.webp",
     "precio": 3800,
-    "cantidad": 11
+    "stock": 11
 }
 
 ]

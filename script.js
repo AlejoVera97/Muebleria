@@ -4,13 +4,11 @@ let tarjetaStorage = JSON.parse(localStorage.getItem("tarjetaProductos")) || [];
 fetch("/data.json")
     .then((response) => response.json())
     .then((data) => {
-        productos = data; // Asignar los productos desde el JSON a la variable productos
-        const productosContainer = document.getElementById("productos"); // Obtener el contenedor de productos
-
+        productos = data;
+        const productosContainer = document.getElementById("productos");
         data.forEach((producto) => {
             const tarjeta = document.createElement("div");
             tarjeta.classList.add("grid-item");
-
             tarjeta.innerHTML = `
             <div class="imagen-contenedor">
                 <img src="${producto.imagen}" alt="${producto.nombre}" class="imagen">
@@ -19,14 +17,19 @@ fetch("/data.json")
             <h3 class="nombre-articulo">${producto.nombre}</h3>  
             <h4 class="precio-articulo">Precio: $${producto.precio}</h4>
         `;
-
             productosContainer.appendChild(tarjeta);
         });
-
+        if (!localStorage.getItem("productosConStock")) {
+            localStorage.setItem("productosConStock", JSON.stringify(productos));
+        } else {
+            productos = JSON.parse(localStorage.getItem("productosConStock"));
+        }
         agregarAlBoton();
     });
 
-// Función para agregar productos al carrito
+
+
+// FUNCION AGREGAR BOTON AL CARRITO
 
 function agregarAlBoton() {
     const addButton = document.querySelectorAll(".productoAgregar");
@@ -36,21 +39,32 @@ function agregarAlBoton() {
             const seleccionarProducto = productos.find(producto => producto.id == productoID);
             if (seleccionarProducto) {
                 const productoEnCarrito = tarjetaStorage.find(prod => prod.id == productoID);
-                if (productoEnCarrito) {
-                    productoEnCarrito.cantidad += 1;
-                } else {
-                    seleccionarProducto.cantidad = 1;
-                    tarjetaStorage.push(seleccionarProducto);
-                }
-                localStorage.setItem("tarjetaProductos", JSON.stringify(tarjetaStorage));
+                const cantidadEnCarrito = productoEnCarrito ? productoEnCarrito.cantidad : 0;
+                if (seleccionarProducto.stock > cantidadEnCarrito) {
+                    if (productoEnCarrito) {
+                        productoEnCarrito.cantidad += 1;
+                    } else {
+                        seleccionarProducto.cantidad = 1;
+                        tarjetaStorage.push(seleccionarProducto);
+                    }
+                    localStorage.setItem("tarjetaProductos", JSON.stringify(tarjetaStorage));
 
                     Swal.fire({
-                    icon: 'success',
-                    title: 'Producto añadido al carrito',
-                    text: `El producto ${seleccionarProducto.nombre} ha sido agregado.`,
-                    confirmButtonText: 'OK'
-                });
+                        icon: 'success',
+                        title: 'Producto añadido al carrito',
+                        text: `El producto ${seleccionarProducto.nombre} ha sido agregado.`,
+                        confirmButtonText: 'OK'
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Stock insuficiente',
+                        text: `No hay suficiente stock para agregar más unidades de ${seleccionarProducto.nombre}.`,
+                        confirmButtonText: 'Entendido'
+                    });
+                }
             }
         };
     });
 }
+
