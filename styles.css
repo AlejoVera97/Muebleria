@@ -1,3 +1,4 @@
+
 #titulo-contenedor {
     text-align: center;
     padding: 20px;
@@ -11,12 +12,10 @@
 }
 
 #titulo {
-    color: white;
+    color: rgb(247, 245, 245);
     font-size: 50px;
     font-family: Arial, sans-serif;
     margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-
 }
 
 #logo-empresa {
@@ -27,12 +26,11 @@
 
 #encabezado {
     display: flex;
-    justify-content: space-around;
-    color: white;
-    background-color: black;
-    text-align: center;
-    padding: 10px;
-    font-family: 'Courier New', Courier, monospace;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
 }
 
 .info-item {
@@ -41,13 +39,13 @@
 }
 
 .info-item i {
-    font-size: 24px; /* Tamaño del ícono */
-    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    font-size: 24px; 
+    margin-right: 10px; 
 }
 
 .info-item h2 {
     margin: 0;
-    font-size: 18px; /* Tamaño del texto */
+    font-size: 18px; 
 }
 
 #carrito {
@@ -56,81 +54,218 @@
     padding: 5px 10px; 
     background-color: #444;
     border-radius: 5px; 
-    cursor: pointer; /
+    cursor: pointer; 
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.grid-item {
+    position: relative;
+    background-color: #060606f2;
+    border: 1px solid #080808;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.imagen-contenedor {
+    position: relative;
+}
+
+.imagen {
+    width: 100%;
+    height: 400px; 
+    object-fit: cover;
+}
+
+.productoAgregar {
+    position: absolute;
+    top: 90%; 
+    left: 20%; 
+    transform: translate(-50%, -50%); 
+    background-color: #4CAF50; 
+    color: rgb(246, 245, 245); 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    border-radius: 5px; 
+    cursor: pointer; 
+    z-index: 1;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.productoAgregar:hover {
+    background-color: #45a049; 
+}
+
+.nombre-articulo, .precio-articulo {
+    text-align: center;
+    margin: 5px 0;
+    padding: 5px;
+    background-color: rgba(19, 18, 18, 0.665);
+    color: rgba(254, 252, 252, 0.976);
+    border-radius: 5px;
+}
+
+.boton-compras {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50; 
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none; 
+    transition: background-color 0.3s ease; 
+}
+
+.boton-compras:hover {
+    background-color:  #45a049; 
+}
+
+#login-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#login-form {
+    display: flex;
+    gap: 10px;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#login-form button {
+    padding: 8px 15px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#login-form button:hover {
+    background-color: #555;
+}
+
+#login-form input[type="text"]:focus,
+#login-form input[type="password"]:focus {
+    outline: none;
+    border-color: #888;
+}
+
+#create-user-link {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#create-user-link:hover {
+    color: #bbb;
 }
 
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(200px, 1fr));
-        gap: 10px;
-        padding: 10px;
-        justify-content: center;
-    }
-    
-    .grid-item {
-        position: relative;
-        background-color: #060606f2;
-        border: 1px solid #080808;
-        border-radius: 5px;
-        overflow: hidden;
-    }
-    
-    .imagen-contenedor {
-        position: relative;
-    }
-    
-    .imagen {
-        width: 100%;
-        height: 400px; 
-        object-fit: cover;
-    }
-    
-    .productoAgregar {
-        position: absolute;
-        top: 90%; 
-        left: 20%; 
-        transform: translate(-50%, -50%); 
-        background-color: #4CAF50; 
-        color: rgb(246, 245, 245); 
-        border: none; 
-        padding: 10px 20px; 
-        font-size: 16px;
-        border-radius: 5px; 
-        cursor: pointer; 
-        z-index: 1; /
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    }
-    
-    .productoAgregar:hover {
-        background-color: #45a049; 
-    }
-    
-    .nombre-articulo, .precio-articulo {
-        text-align: center;
-        margin: 5px 0;
-        padding: 5px;
-        background-color: rgba(19, 18, 18, 0.665);
-        color: rgba(254, 252, 252, 0.976);
-        border-radius: 5px;
+@media (max-width: 768px) {
+    #titulo-contenedor {
+        flex-direction: column;
+        padding: 15px;
     }
 
-    .boton-compras {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        color: #fff;
-        background-color: #4CAF50; 
-        border: none;
-        border-radius: 5px;
-        text-align: center;
-        text-decoration: none; 
-        transition: background-color 0.3s ease; 
+    #titulo {
+        font-size: 36px;
     }
-    
-    .boton-compras:hover {
-        background-color:  #45a049; 
+
+    #logo-empresa {
+        height: 80px;
     }
-    
-    
+
+    #encabezado {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+
+    .info-item i {
+        margin-bottom: 5px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .imagen {
+        height: 250px;
+    }
+
+    #login-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    #titulo-contenedor {
+        padding: 10px;
+    }
+
+    #titulo {
+        font-size: 28px;
+    }
+
+    #logo-empresa {
+        height: 60px;
+    }
+
+    .grid {
+        gap: 5px;
+    }
+
+    .imagen {
+        height: 200px;
+    }
+
+    .productoAgregar {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .nombre-articulo, .precio-articulo {
+        font-size: 14px;
+    }
+
+    #login-form input[type="text"],
+    #login-form input[type="password"] {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    #login-form button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    #create-user-link {
+        font-size: 12px;
+    }
+}

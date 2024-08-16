@@ -1,71 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
+
     <!-- JS -->
-        <script defer src="script.js"></script>
+    <script defer src="script.js"></script>
 
-          
-        <!-- CSS-->
-        <link rel="stylesheet" href="styles.css">
+    <!-- CSS-->
+    <link rel="stylesheet" href="styles.css">
 
-        <!-- LIBRERIA DE ALERTAS-->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- LIBRERIA DE ALERTAS-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        <!-- ICONOS-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- ICONOS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-          <!-- SweetAlert -->
-         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-       
-
-        
-<title>Black and White</title>
-    
+    <title>Black and White</title>
 </head>
+
 <body>
-        <!-- DOM -->
-
-        <!-- ENCABEZADO -->
     <header>
-
-    <div id="titulo-contenedor"> 
-        <img src="https://i.pinimg.com/564x/e8/14/8f/e8148fa503fa36356d599ce461049567.jpg" alt="logo-empresa" id="logo-empresa">
-        <h1 id="titulo"> BLACK AND WHITE </h1>
-
-        <h2><a href="/carrito.html" class="boton-compras"><i class="fas fa-shopping-cart"></i> Compras</a></h2>
-
-    
-    </body>
-    </div>
-
-    <div id="encabezado">  
-        <div class="info-item">
-            <i class="fa-solid fa-store"></i>
-            <h2 id="nombre-encabezado"> MUEBLERIA </h2>
+        <div id="titulo-contenedor">
+            <img src="https://i.pinimg.com/564x/e8/14/8f/e8148fa503fa36356d599ce461049567.jpg" alt="logo-empresa"
+                id="logo-empresa">
+            <h1 id="titulo"> BLACK AND WHITE </h1>
+            <h2><a href="/carrito.html" class="boton-compras"><i class="fas fa-shopping-cart"></i> Compras</a></h2>
         </div>
-        <div class="info-item">
-            <i class="fa-solid fa-phone"></i>
-            <h2 id="contacto-num"> Contacto: +598 98 174 198 </h2>
+        <div id="encabezado">
+            <div class="info-item">
+                <i class="fa-solid fa-store"></i>
+                <h2 id="nombre-encabezado"> MUEBLERIA </h2>
+            </div>
+
+            <div class="info-item" id="login-container">
+                <form id="login-form">
+                    <input type="text" id="username" name="username" placeholder="Usuario" required>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    <button type="submit">Ingresar</button>
+                </form>
+                <a href="/registro.html" id="create-user-link"> Crear Usuario</a>
+
+            </div>
         </div>
-        <div class="info-item">
-            <i class="fa-solid fa-map-marker-alt"></i>
-            <h2 id="dir-local"> Dirección:  Calle Pedro Sosa 1145 </h2>
-        </div>
-    </div>
-    
-    
+
+
 
     </header>
 
-    <!-- MAIN -->
     <main class="main">
-        <div class="grid" id="productos"></div>      
-      
-    
-    </main>
-    
+        <div class="grid" id="productos"></div>
+
+
+        <footer style="background-color: #333; color: #fff; padding: 20px; text-align: center; margin-top: 20px;">
+            <div style="margin-bottom: 10px;">
+                <p>&copy; 2024 Black and White. Todos los derechos reservados.</p>
+                <p>Contacto: <a href="mailto:contacto@blackandwhite.com"
+                        style="color: #fff; text-decoration: underline;">contacto@blackandwhite.com</a></p>
+                <p>Dirección: Calle Pedro Sosa 1145, Montevideo, Uruguay</p>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <a href="https://facebook.com" target="_blank" style="color: #fff; margin: 0 10px;"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" style="color: #fff; margin: 0 10px;"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" style="color: #fff; margin: 0 10px;"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+        </footer>
+</body>
+</main>
 </html>

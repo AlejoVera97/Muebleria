@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@
     <!-- JS -->
     <script defer src="carrito.js"></script>
 
-
     <!-- ICONOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -20,11 +18,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
-
 <body>
     <div id="main-container">
         <h1>Tu Carrito de Compras</h1>
-        <div id="contenedor-carrito"></div> <!-- Aquí se llenarán los productos del carrito -->
+        <div id="contenedor-carrito"></div>
 
         <section id="tarjetaCompras"></section>
 
@@ -36,18 +33,15 @@
                     <option value="3">3 cuotas</option>
                     <option value="6">6 cuotas</option>
                     <option value="12">12 cuotas</option>
-                  </select>
+                </select>
                 <button type="button" id="calcular">Calcular</button>
             </div>
 
-            <!-- Cuadro de texto para mostrar el cálculo -->
             <input type="text" id="resultado" readonly placeholder="Monto en cuotas aparecerá aquí">
         </form>
 
-        <!-- Botón de Comprar -->
         <button id="comprar" type="button">Comprar</button>
 
-        <!-- Formulario para datos del usuario (inicialmente oculto) -->
         <div id="formularioUsuario" style="display: none;">
             <h2>Datos del Usuario</h2>
             <form id="datosUsuarioForm">
@@ -74,5 +68,4 @@
         <h2 id="botonVolver"> <a href="./index.html"> <i class="fas fa-arrow-left"></i> Volver al catálogo </a> </h2>
     </div>
 </body>
-
 </html>
